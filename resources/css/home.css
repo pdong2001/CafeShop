@@ -1,0 +1,355 @@
+header {
+    position: relative;
+}
+
+.logo img {
+    background-color: #38160D;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 20%;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu .menu-items {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    user-select: none;
+}
+
+.menu .menu-item {
+    cursor: pointer;
+    width: 100%;
+    transition: all .2s;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 15px 10px;
+}
+
+.menu .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.158);
+}
+
+#main-menu .menu-item {
+    color: white;
+    font-weight: bold;
+    font-size: 150%;
+    border-radius: 10px;
+}
+
+#main-menu .menu-items {
+    grid-column-gap: 30px;
+    background-color: #38160D;
+    padding: 10px;
+}
+
+#main-menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+#main-menu .menu {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.cart {
+    position: fixed;
+    background-color: #38160D;
+    color: white;
+    font-size: 125%;
+    top: 10px;
+    right: 10px;
+    user-select: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.menu .active {
+    border-bottom: 3px solid white;
+}
+
+.slides {
+    padding: 0;
+    width: 100%;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide-container {
+    display: block;
+}
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 420px;
+    display: block;
+    position: absolute;
+    transform: scale(0);
+    transition: all .7s ease-in-out;
+}
+
+.slides .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slides .nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+    transition: opacity .2s;
+    color: #FFF;
+    font-size: 106pt;
+    text-align: center;
+    line-height: 380px;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slides .slide:hover+.nav label {
+    opacity: 0.5;
+}
+
+.slides .nav label:hover {
+    opacity: 1;
+}
+
+.slides .nav .next {
+    right: 0;
+}
+
+.slides input:checked+.slide-container .slide {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+.slides input:checked+.slide-container .nav label {
+    display: block;
+}
+
+.slides .nav-dots {
+    width: 100%;
+    bottom: 9px;
+    height: 11px;
+    display: block;
+    position: absolute;
+    text-align: center;
+}
+
+.slides .nav-dots .nav-dot {
+    top: -5px;
+    width: 11px;
+    height: 11px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.slides .nav-dots .nav-dot:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slides input#img-1:checked~.nav-dots label#img-dot-1,
+.slides input#img-2:checked~.nav-dots label#img-dot-2,
+.slides input#img-3:checked~.nav-dots label#img-dot-3,
+.slides input#img-4:checked~.nav-dots label#img-dot-4,
+.slides input#img-5:checked~.nav-dots label#img-dot-5,
+.slides input#img-6:checked~.nav-dots label#img-dot-6 {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.about {
+    margin-top: 50px;
+    width: 100%;
+    position: relative;
+}
+
+.about .bg {
+    height: 150%;
+    width: 100%;
+}
+
+.about .content {
+    position: absolute;
+    top: 0;
+}
+
+.about .intro div {
+    margin: 0px 30%;
+    background-color: white;
+    padding: 10px 20px;
+}
+
+.about .intro div p {
+    font-size: 125%;
+    font-weight: 600;
+}
+
+.about .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .title h1 {
+    font-size: 250%;
+    color: rgb(94, 22, 22);
+    text-align: center;
+}
+
+.about .title img {
+    width: 80px;
+}
+
+.about .product {
+    display: flex;
+    padding: 0 5%;
+}
+
+.about .product .introduce {
+    width: 100%;
+}
+
+.about .product .introduce p {
+    font-size: 135%;
+    margin: 30px 5%;
+    text-align: justify;
+}
+
+.about .product .img {
+    width: 60%;
+}
+
+.about .product .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    width: 100%;
+    padding: 30px 10%;
+}
+
+.products .product .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.products .product .info {
+    font-size: 150%;
+    text-align: center;
+    padding: 5px 10%;
+    font-weight: bold;
+    color: #38160D;
+    text-transform: uppercase;
+}
+
+.products .product .price {
+    display: flex;
+    flex-direction: column;
+    font-size: 100%;
+    text-align: center;
+    padding: 10px 10%;
+    color: #38160D;
+}
+
+.products .product .buy {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-gap: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.products .product .buy input {
+    border: 2px solid #38160D;
+    width: 100%;
+    color: #38160D;
+    font-size: 100%;
+    text-align: center;
+}
+
+.products .product .buy a {
+    padding: 10px 15px;
+    background-color: #38160D;
+    color: white;
+    border-radius: 10px;
+}
+
+.show-more {
+    color: #38160D;
+    text-decoration: underline;
+    font-weight: bold;
+    float: right;
+    margin-right: 10%;
+}
+
+footer {
+    margin-top: 30px;
+    display: flex;
+    color: white;
+    background-color: #38160D;
+    padding: 10px 10px;
+}
+
+footer .content {
+    display: flex;
+    flex-direction: row;
+}
+
+footer .content div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+footer .content div span:first-child {
+    font-weight: bold;
+    font-size: large;
+}
