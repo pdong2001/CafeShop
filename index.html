@@ -24,13 +24,13 @@
         <div id="main-menu">
             <div class="menu">
                 <uL class="menu-items">
-                    <li class="menu-item active">
+                    <li onclick="openTabSpace(event, 'home-page', 'tabspace')" class="menu-item tablink active">
                         <span>TRANG CHỦ</span>
                     </li>
-                    <li class="menu-item">
+                    <li id="tab-product" class="menu-item tablink" onclick="openTabSpace(event, 'product-page', 'tabspace')">
                         <span>SẢN PHẨM</span>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item tablink" onclick="openTabSpace(event, 'event-page', 'tabspace')">
                         <span>SỰ KIỆN</span>
                     </li>
                 </uL>
@@ -38,242 +38,585 @@
             <div class="logo">
                 <img src="resources/img/Cafe-logo.svg" alt="Logo">
             </div>
+            <div class="cart" onclick="openTabSpace(event, 'cart-page', 'tabspace')">
+                <span class="goods-count">0</span>
+                <i class="fas fa-shopping-cart"></i>
+            </div>
             <div class="menu">
                 <uL class="menu-items">
-                    <li class="menu-item">
+                    <li class="menu-item tablink" onclick="openTabSpace(event, 'news-page', 'tabspace')">
                         <span>TIN TỨC</span>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item tablink" onclick="openTabSpace(event, 'shop-page', 'tabspace')">
                         <span>CỬA HÀNG CAFE</span>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item tablink" onclick="openTabSpace(event, 'contact-page', 'tabspace')">
                         <span>LIÊN HỆ</span>
                     </li>
                 </uL>
             </div>
-            <div class="cart">
-                <span class="goods-count">0</span>
-                <i class="fas fa-shopping-cart"></i>
-            </div>
         </div>
-        <ul class="slides">
-            <input type="radio" name="radio-btn" id="img-1" checked />
-            <li class="slide-container">
-                <div class="slide">
-                    <img src="resources/img/cafe-intro1.jpg" />
-                </div>
-                <div class="nav">
-                    <label for="img-6" class="prev">&#x2039;</label>
-                    <label for="img-2" class="next">&#x203a;</label>
-                </div>
-            </li>
-
-            <input type="radio" name="radio-btn" id="img-2" />
-            <li class="slide-container">
-                <div class="slide">
-                    <img src="resources/img/cafe-intro2.jpg" />
-                </div>
-                <div class="nav">
-                    <label for="img-1" class="prev">&#x2039;</label>
-                    <label for="img-3" class="next">&#x203a;</label>
-                </div>
-            </li>
-
-            <input type="radio" name="radio-btn" id="img-3" />
-            <li class="slide-container">
-                <div class="slide">
-                    <img src="resources/img/cafe-intro3.jpg" />
-                </div>
-                <div class="nav">
-                    <label for="img-2" class="prev">&#x2039;</label>
-                    <label for="img-4" class="next">&#x203a;</label>
-                </div>
-            </li>
-
-            <input type="radio" name="radio-btn" id="img-4" />
-            <li class="slide-container">
-                <div class="slide">
-                    <img src="resources/img/cafe-intro4.jpg" />
-                </div>
-                <div class="nav">
-                    <label for="img-3" class="prev">&#x2039;</label>
-                    <label for="img-5" class="next">&#x203a;</label>
-                </div>
-            </li>
-
-            <input type="radio" name="radio-btn" id="img-5" />
-            <li class="slide-container">
-                <div class="slide">
-                    <img src="resources/img/cafe-intro5.jpg" />
-                </div>
-                <div class="nav">
-                    <label for="img-4" class="prev">&#x2039;</label>
-                    <label for="img-6" class="next">&#x203a;</label>
-                </div>
-            </li>
-
-            <input type="radio" name="radio-btn" id="img-6" />
-            <li class="slide-container">
-                <div class="slide">
-                    <img src="resources/img/cafe-intro6.jpg" />
-                </div>
-                <div class="nav">
-                    <label for="img-5" class="prev">&#x2039;</label>
-                    <label for="img-1" class="next">&#x203a;</label>
-                </div>
-            </li>
-
-            <li class="nav-dots">
-                <label for="img-1" class="nav-dot" id="img-dot-1"></label>
-                <label for="img-2" class="nav-dot" id="img-dot-2"></label>
-                <label for="img-3" class="nav-dot" id="img-dot-3"></label>
-                <label for="img-4" class="nav-dot" id="img-dot-4"></label>
-                <label for="img-5" class="nav-dot" id="img-dot-5"></label>
-                <label for="img-6" class="nav-dot" id="img-dot-6"></label>
-            </li>
-        </ul>
+    </header>
+    <main>
         <section>
-            <div class="about">
-                <img class="bg" src="resources/img/cafe-farm.jpg" alt="background">
-                <div class="content">
-                    <div class="title">
-                        <h1>CAFÉ JW : Đánh thức khát vọng</h1>
-                        <img src="resources/img/Coffee-nine.gif">
+            <div id="home-page" class="tabspace active">
+                <ul class="slides">
+                    <input type="radio" name="radio-btn" id="img-1" checked />
+                    <li class="slide-container">
+                        <div class="slide">
+                            <img src="resources/img/cafe-intro1.jpg" />
+                        </div>
+                        <div class="nav">
+                            <label for="img-6" class="prev">&#x2039;</label>
+                            <label for="img-2" class="next">&#x203a;</label>
+                        </div>
+                    </li>
+
+                    <input type="radio" name="radio-btn" id="img-2" />
+                    <li class="slide-container">
+                        <div class="slide">
+                            <img src="resources/img/cafe-intro2.jpg" />
+                        </div>
+                        <div class="nav">
+                            <label for="img-1" class="prev">&#x2039;</label>
+                            <label for="img-3" class="next">&#x203a;</label>
+                        </div>
+                    </li>
+
+                    <input type="radio" name="radio-btn" id="img-3" />
+                    <li class="slide-container">
+                        <div class="slide">
+                            <img src="resources/img/cafe-intro3.jpg" />
+                        </div>
+                        <div class="nav">
+                            <label for="img-2" class="prev">&#x2039;</label>
+                            <label for="img-4" class="next">&#x203a;</label>
+                        </div>
+                    </li>
+
+                    <input type="radio" name="radio-btn" id="img-4" />
+                    <li class="slide-container">
+                        <div class="slide">
+                            <img src="resources/img/cafe-intro4.jpg" />
+                        </div>
+                        <div class="nav">
+                            <label for="img-3" class="prev">&#x2039;</label>
+                            <label for="img-5" class="next">&#x203a;</label>
+                        </div>
+                    </li>
+
+                    <input type="radio" name="radio-btn" id="img-5" />
+                    <li class="slide-container">
+                        <div class="slide">
+                            <img src="resources/img/cafe-intro5.jpg" />
+                        </div>
+                        <div class="nav">
+                            <label for="img-4" class="prev">&#x2039;</label>
+                            <label for="img-6" class="next">&#x203a;</label>
+                        </div>
+                    </li>
+
+                    <input type="radio" name="radio-btn" id="img-6" />
+                    <li class="slide-container">
+                        <div class="slide">
+                            <img src="resources/img/cafe-intro6.jpg" />
+                        </div>
+                        <div class="nav">
+                            <label for="img-5" class="prev">&#x2039;</label>
+                            <label for="img-1" class="next">&#x203a;</label>
+                        </div>
+                    </li>
+
+                    <li class="nav-dots">
+                        <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+                        <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+                        <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+                        <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+                        <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+                        <label for="img-6" class="nav-dot" id="img-dot-6"></label>
+                    </li>
+                </ul>
+                <div class="about">
+                    <img class="bg" src="resources/img/cafe-farm.jpg" alt="background">
+                    <div class="content">
+                        <div class="title">
+                            <h1>CAFÉ JW : Đánh thức khát vọng</h1>
+                            <img src="resources/img/Coffee-nine.gif">
+                        </div>
+                        <div class="intro">
+                            <div>
+                                <p>
+                                    Được người Pháp đem lên cao nguyên LangBiang vào năm 1930, cây cà phê arabica Đà Lạt đã có một khởi đầu mơ ước ở vùng có thổ nhưỡng, khí hậu không khác gì tại quê hương cà phê Ethiopia.
+                                    <br>Bắt mạch sống vào mảnh đất màu mỡ, thời tiết mát lạnh quanh năm cùng bàn tay chăm sóc của những con người đam mê cà phê, arabica Đà Lạt đã từng có một quãng thời gian huy hoàng, khi trở thành thức uống của giới
+                                    thượng lưu, trí thức, học giả và chính trị gia người Pháp lẫn người Việt Nam.
+                                    <br>Hương thơm say đắm gợi niềm thương nhớ, vị thanh tao nhẹ nhàng mà mê hoặc, cà phê arabica Đà Lạt gắn kết sâu sắc với những câu chuyện, văn hóa, phong cách sống lịch lãm nhưng đầy chân tình của người dân mảnh đất
+                                    ngàn hoa, thông reo cùng sương mù che phủ.
+                                    <br>Những cuộc bể dâu. Cà phê arabica Đà Lạt dần mai một rồi trở nên bị quên lãng giữa cuộc sống lẫn lộn các giá trị thật-giả...
+                                    <br>Cho đến một ngày, người Đà Lạt choàng tỉnh khi giở lại những trang ký ức đẹp về một thời hoa lệ chưa xa. Từng ngày, từng ngày, cây cà phê arabica Đà Lạt đã được bàn tay, khối óc của những chuyên gia cà phê trong
+                                    ngoài nước, người bản địa gầy dựng lại. Để rồi hôm nay, Café LangBiang tự hào là thương hiệu cà phê arabica Đà Lạt thuần khiết nhất có mặt trên thị trường.
+                                    <br>Việt Nam là cường quốc xuất khẩu cà phê. Đà Lạt là một trong những nơi trồng arabica ngon nổi tiếng thế giới nhưng thương hiệu cà phê arabica Việt vẫn mờ nhạt. Hôm nay, Café LangBiang sẽ viết tiếp câu chuyện Cà
+                                    phê Arabica Việt Nam - bằng đam mê và những giá trị tinh tuý nhất.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="intro">
-                        <div>
-                            <p>
-                                Được người Pháp đem lên cao nguyên LangBiang vào năm 1930, cây cà phê arabica Đà Lạt đã có một khởi đầu mơ ước ở vùng có thổ nhưỡng, khí hậu không khác gì tại quê hương cà phê Ethiopia.
-                                <br>Bắt mạch sống vào mảnh đất màu mỡ, thời tiết mát lạnh quanh năm cùng bàn tay chăm sóc của những con người đam mê cà phê, arabica Đà Lạt đã từng có một quãng thời gian huy hoàng, khi trở thành thức uống của giới thượng
-                                lưu, trí thức, học giả và chính trị gia người Pháp lẫn người Việt Nam.
-                                <br>Hương thơm say đắm gợi niềm thương nhớ, vị thanh tao nhẹ nhàng mà mê hoặc, cà phê arabica Đà Lạt gắn kết sâu sắc với những câu chuyện, văn hóa, phong cách sống lịch lãm nhưng đầy chân tình của người dân mảnh đất ngàn
-                                hoa, thông reo cùng sương mù che phủ.
-                                <br>Những cuộc bể dâu. Cà phê arabica Đà Lạt dần mai một rồi trở nên bị quên lãng giữa cuộc sống lẫn lộn các giá trị thật-giả...
-                                <br>Cho đến một ngày, người Đà Lạt choàng tỉnh khi giở lại những trang ký ức đẹp về một thời hoa lệ chưa xa. Từng ngày, từng ngày, cây cà phê arabica Đà Lạt đã được bàn tay, khối óc của những chuyên gia cà phê trong ngoài
-                                nước, người bản địa gầy dựng lại. Để rồi hôm nay, Café LangBiang tự hào là thương hiệu cà phê arabica Đà Lạt thuần khiết nhất có mặt trên thị trường.
-                                <br>Việt Nam là cường quốc xuất khẩu cà phê. Đà Lạt là một trong những nơi trồng arabica ngon nổi tiếng thế giới nhưng thương hiệu cà phê arabica Việt vẫn mờ nhạt. Hôm nay, Café LangBiang sẽ viết tiếp câu chuyện Cà phê
-                                Arabica Việt Nam - bằng đam mê và những giá trị tinh tuý nhất.
+                    <div class="product bg-brown">
+                        <div class="introduce">
+                            <p class="white">
+                                Mỗi mùa trong năm đều lưu giữ một ký ức mà ta đã từng gắn bó, nếm trải và mang những nỗi niềm khác nhau. Để rồi khi hoài niệm khiến cho ta có cảm xúc tương tư thương nhớ.
+                                <br><br>Đến với tháng tư cao nguyên lâm viên lãng mạn và trữ tình. LangBiang mùa này là mùa của cảm xúc yêu thương huyền ảo. Những nông trại cà phê Arabica xanh mướt hòa quyện mập mờ trong vòng tay ôm ấp của màn sương.
+                                Màu xanh của nông trại Arabica là một phần hơi thở, nhịp sống của đại ngàn nơi đây. Cao nguyên lâm viên tháng tư có những cơm mưa đầu mùa tắm gội tất cả những cảnh vật nơi đây, thúc dục cỏ cây hoa lá đâm chồi nảy lộc và
+                                đơm hoa kết trái.
+
+                                <br><br>Mùa mưa Tây nguyên, mùa của cỏ cây thay áo mới, mùa trồng tỉa và là mùa của sự no ấm hạnh phúc. Mùa của chi chít trái trên những cành Arabica được tắm gội và hấp thụ những tinh khí, dưỡng chất của đất trời. Bởi
+                                những cơn mưa đầu mùa luôn mang lại cho cây cối và thiên nhiên nguồn năng lượng bất tận. Chồi non đua nhau mọc lên, cây trái xanh mướt.
+
+                                <br><br>Những cơn mưa đầu mùa luôn đủ đầy dư vị cuộc sống, cho lòng người thêm nhiều cảm xúc thăng hoa.
+                            </p>
+                        </div>
+                        <div class="img">
+                            <img src="resources/img/cafe-machine.jpg">
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="img">
+                            <img src="resources/img/cafe-nature.jpg">
+                        </div>
+                        <div class="introduce">
+                            <p style="margin-bottom: 0px;">
+                                Ly cà phê luôn mang lại niềm vui phấn khởi cho người thưởng thức, cầu nối gắn kết tình bằng hữu. Với những người trẻ tuổi, cà phề là "đầu câu chuyện" cho những buổi hẹn hò, gặp gỡ. Mặc cho thế giới xung quanh có ồn ào náo nhiệt.
+                                <br><br>à phê vẫn âm thầm hòa quyện vào trong từng cảm xúc để truyền tải những thông điệp gắn kết mọi ý tưởng, sáng tạo hướng đến thành quả nhất định, xóa nhòa mọi khoảng cách. Cà phê không phân biệt màu gia hay tôn giáo
+                                mà nó giúp con người xích lại gần nhau hơn để yêu thương và sẻ chia cuộc sống.
+
+                                <br><br>Uống cà phê là thưởng thức, là tận hưởng những gì là tinh túy mà cà phê mạng đến cho cuộc sống. Người uống cà phê thông minh là người biết chọn lựa cho mình loại cà phê ngon và tốt cho sức khỏe. Vì sức khỏe - con
+                                người và quy luật đào thải của thị trường sẽ tẩy chay những dòng sản phẩm bẩn và kém chất lượng.
+
+                                <br><br>Chỉ có cà phê sạch - Oganic mới đem lại sự an tâm và tốt cho sức khỏe người tiêu dùng. Cà phê Arabica Lang Biang sẽ là thỏa mãn mọi đam mê và là sự lựa chọn vô cùng thông minh và hoàn hảo cho những tín đồ cà phê
+                                chân chính.
+
+                                <br><br>Chính vì niềm đam mê bất tận dành cho cà phê sạch mà Café Lang Biang ra đời. Với sứ vụ phục hưng niềm tin của mọi người dành cho cà phê Việt. Café LangBiang sinh ra trong một quy trình chuyên nghiệp, hiện đại và
+                                thành quả của mình chính là lợi ích cho cộng đồng. Bởi chính cái thần diệu và huyền bí đầy tính nhân văn của Café LangBiang sẽ khiên cho bạn trở nên mạnh mẽ, chững chạc và thông thái.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="product bg-brown">
-                    <div class="introduce">
-                        <p class="white">
-                            Mỗi mùa trong năm đều lưu giữ một ký ức mà ta đã từng gắn bó, nếm trải và mang những nỗi niềm khác nhau. Để rồi khi hoài niệm khiến cho ta có cảm xúc tương tư thương nhớ.
-                            <br><br>Đến với tháng tư cao nguyên lâm viên lãng mạn và trữ tình. LangBiang mùa này là mùa của cảm xúc yêu thương huyền ảo. Những nông trại cà phê Arabica xanh mướt hòa quyện mập mờ trong vòng tay ôm ấp của màn sương. Màu
-                            xanh của nông trại Arabica là một phần hơi thở, nhịp sống của đại ngàn nơi đây. Cao nguyên lâm viên tháng tư có những cơm mưa đầu mùa tắm gội tất cả những cảnh vật nơi đây, thúc dục cỏ cây hoa lá đâm chồi nảy lộc và đơm hoa
-                            kết trái.
-
-                            <br><br>Mùa mưa Tây nguyên, mùa của cỏ cây thay áo mới, mùa trồng tỉa và là mùa của sự no ấm hạnh phúc. Mùa của chi chít trái trên những cành Arabica được tắm gội và hấp thụ những tinh khí, dưỡng chất của đất trời. Bởi những
-                            cơn mưa đầu mùa luôn mang lại cho cây cối và thiên nhiên nguồn năng lượng bất tận. Chồi non đua nhau mọc lên, cây trái xanh mướt.
-
-                            <br><br>Những cơn mưa đầu mùa luôn đủ đầy dư vị cuộc sống, cho lòng người thêm nhiều cảm xúc thăng hoa.
-                        </p>
+                <div class="products">
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
                     </div>
-                    <div class="img">
-                        <img src="resources/img/cafe-machine.jpg">
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
                     </div>
                 </div>
-                <div class="product">
-                    <div class="img">
-                        <img src="resources/img/cafe-nature.jpg">
+                <a class="show-more clearfix">Xem thêm</a>
+            </div>
+        </section>
+        <section>
+            <div id="product-page" class="tabspace">
+                <div class="title">
+                    <h1>SẢN PHẨM</h1>
+                    <img src="resources/img/Coffee-nine.gif">
+                </div>
+                <div class="products">
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
                     </div>
-                    <div class="introduce">
-                        <p style="margin-bottom: 0px;">
-                            Ly cà phê luôn mang lại niềm vui phấn khởi cho người thưởng thức, cầu nối gắn kết tình bằng hữu. Với những người trẻ tuổi, cà phề là "đầu câu chuyện" cho những buổi hẹn hò, gặp gỡ. Mặc cho thế giới xung quanh có ồn ào náo nhiệt.
-                            <br><br>à phê vẫn âm thầm hòa quyện vào trong từng cảm xúc để truyền tải những thông điệp gắn kết mọi ý tưởng, sáng tạo hướng đến thành quả nhất định, xóa nhòa mọi khoảng cách. Cà phê không phân biệt màu gia hay tôn giáo mà
-                            nó giúp con người xích lại gần nhau hơn để yêu thương và sẻ chia cuộc sống.
-
-                            <br><br>Uống cà phê là thưởng thức, là tận hưởng những gì là tinh túy mà cà phê mạng đến cho cuộc sống. Người uống cà phê thông minh là người biết chọn lựa cho mình loại cà phê ngon và tốt cho sức khỏe. Vì sức khỏe - con người
-                            và quy luật đào thải của thị trường sẽ tẩy chay những dòng sản phẩm bẩn và kém chất lượng.
-
-                            <br><br>Chỉ có cà phê sạch - Oganic mới đem lại sự an tâm và tốt cho sức khỏe người tiêu dùng. Cà phê Arabica Lang Biang sẽ là thỏa mãn mọi đam mê và là sự lựa chọn vô cùng thông minh và hoàn hảo cho những tín đồ cà phê chân
-                            chính.
-
-                            <br><br>Chính vì niềm đam mê bất tận dành cho cà phê sạch mà Café Lang Biang ra đời. Với sứ vụ phục hưng niềm tin của mọi người dành cho cà phê Việt. Café LangBiang sinh ra trong một quy trình chuyên nghiệp, hiện đại và thành
-                            quả của mình chính là lợi ích cho cộng đồng. Bởi chính cái thần diệu và huyền bí đầy tính nhân văn của Café LangBiang sẽ khiên cho bạn trở nên mạnh mẽ, chững chạc và thông thái.
-                        </p>
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="image">
+                            <img src="resources/img/cafe-product.jpg">
+                        </div>
+                        <div class="info">
+                            <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                        </div>
+                        <div class="price">
+                            <span>120.000VNĐ</span>
+                            <span>Khối lượng tịch: 500g</span>
+                        </div>
+                        <div class="buy">
+                            <input type="number">
+                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <section>
-            <div class="products">
-                <div class="product">
-                    <div class="image">
-                        <img src="resources/img/cafe-product.jpg">
-                    </div>
-                    <div class="info">
-                        <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
-                    </div>
-                    <div class="price">
-                        <span>120.000VNĐ</span>
-                        <span>Khối lượng tịch: 500g</span>
-                    </div>
-                    <div class="buy">
-                        <input type="number">
-                        <a href="function:void(0)">Thêm vào giỏ hàng</a>
-                    </div>
+            <div id="event-page" class="tabspace">
+                <div class="title">
+                    <h1>SỰ KIỆN</h1>
+                    <img src="resources/img/Coffee-nine.gif">
                 </div>
-                <div class="product">
-                    <div class="image">
-                        <img src="resources/img/cafe-product.jpg">
+                <div class="container">
+                    <div class="event-block">
+                        <img src="resources/img/cafe-event.jpg">
+                        <div class="description">
+                            <span>Hội chợ ra mắt sản phẩm và chi ân khách hàng</span>
+                        </div>
                     </div>
-                    <div class="info">
-                        <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
+                    <div class="event-block">
+                        <img src="resources/img/cafe-event.jpg">
+                        <div class="description">
+                            <span>Hội chợ ra mắt sản phẩm và chi ân khách hàng</span>
+                        </div>
                     </div>
-                    <div class="price">
-                        <span>120.000VNĐ</span>
-                        <span>Khối lượng tịch: 500g</span>
+                    <div class="event-block">
+                        <img src="resources/img/cafe-event.jpg">
+                        <div class="description">
+                            <span>Hội chợ ra mắt sản phẩm và chi ân khách hàng</span>
+                        </div>
                     </div>
-                    <div class="buy">
-                        <input type="number">
-                        <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                    <div class="event-block">
+                        <img src="resources/img/cafe-event.jpg">
+                        <div class="description">
+                            <span>Hội chợ ra mắt sản phẩm và chi ân khách hàng</span>
+                        </div>
                     </div>
-                </div>
-                <div class="product">
-                    <div class="image">
-                        <img src="resources/img/cafe-product.jpg">
+                    <div class="event-block">
+                        <img src="resources/img/cafe-event.jpg">
+                        <div class="description">
+                            <span>Hội chợ ra mắt sản phẩm và chi ân khách hàng</span>
+                        </div>
                     </div>
-                    <div class="info">
-                        <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
-                    </div>
-                    <div class="price">
-                        <span>120.000VNĐ</span>
-                        <span>Khối lượng tịch: 500g</span>
-                    </div>
-                    <div class="buy">
-                        <input type="number">
-                        <a href="function:void(0)">Thêm vào giỏ hàng</a>
-                    </div>
+
                 </div>
             </div>
-            <a class="show-more clearfix" href="function:void(0)">Xem thêm</a>
         </section>
-        <footer>
-            <div>
-                <h3>THÔNG TIN LIÊN HỆ</h3>
-                <div class="content">
-                    <div>
-                        <span>Chi nhánh Hồ Chí Minh</span>
-                        <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit placeat eum non praesentium modi molestias, a quia. Veritatis, sequi voluptatibus officiis voluptatum numquam, laborum quia laboriosam soluta perspiciatis accusantium modi.</span>
-                        <span>Điện thoại: 0123123123 - 123123213</span>
-                    </div>
-                    <div>
-                        <span>Chi nhánh Hà Nội</span>
-                        <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit placeat eum non praesentium modi molestias, a quia. Veritatis, sequi voluptatibus officiis voluptatum numquam, laborum quia laboriosam soluta perspiciatis accusantium modi.</span>
-                        <span>Điện thoại: 0123123123 - 123123213</span>
-                    </div>
-                    <div>
-                        <span>Chi nhánh Đà Nẵng</span>
-                        <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit placeat eum non praesentium modi molestias, a quia. Veritatis, sequi voluptatibus officiis voluptatum numquam, laborum quia laboriosam soluta perspiciatis accusantium modi.</span>
-                        <span>Điện thoại: 0123123123 - 123123213</span>
+        <section>
+            <div id="news-page" class="tabspace">
+                <div class="title">
+                    <h1>TIN TỨC</h1>
+                    <img src="resources/img/Coffee-nine.gif">
+                </div>
+                <div class="container">
+                    <div class="news">
+                        <div class="news-block">
+                            <span class="news-title">CÀ PHÊ VÀ LÀM ĐẸP</span>
+                            <span class="caption">Cà phê không chỉ là một thức uống được nhiều người ưa thích mà nó còn được xem như một loại nguyên liệu làm đẹp hiệu quả, đặc biệt với da và tóc được rất nhiều người ưa thích. Hãy xem những tác dụng của cà phê giúp làm đẹp cho da và tóc dưới đây nhé!</span>
+                            <div>
+                                <img src="resources/img/cafe-news1.jpg">
+                            </div>
+                            <a href="#">Xem thêm</a>
+                        </div>
+                        <div class="news-block">
+                            <span class="news-title">9 lý do nên uống cà phê mỗi ngày</span>
+                            <span class="caption">Theo các nhà khoa học, cà phê rất tốt cho sức khỏe nếu được uống điều độ. Bằng chứng là những lợi ích với sức khỏe dưới đây.</span>
+                            <div>
+                                <img src="resources/img/cafe-news2.jpg">
+                            </div>
+                            <a href="#">Xem thêm</a>
+                        </div>
+                        <div class="news-block">
+                            <span class="news-title">tác dụng phụ của cà phê nếu uống quá nhiều</span>
+                            <span class="caption">Cà phê có nhiều tác dụng tích cực đối với sức khỏe và làm đẹp nếu sử dụng một cách khoa học và đúng liều lượng. Tuy nhiên, nếu uống quá nhiều cà phê hoặc lựa chọn cà phê kém chất lượng, bạn sẽ gặp các tác dụng phụ.</span>
+                            <div>
+                                <img src="resources/img/cafe-news3.jpg">
+                            </div>
+                            <a href="#">Xem thêm</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
-    </header>
+        </section>
+        <section>
+            <div class="tabspace" id="contact-page">
+                <div class="container">
+                    <div class="register">
+                        <form>
+                            <div>
+                                <input type="text" placeholder="Họ và tên">
+                                <input type="email" placeholder="Email">
+                                <input type="text" placeholder="Chủ đề">
+                                <textarea placeholder="Nội dung" rows="6"></textarea>
+                            </div>
+                            <input type="submit" value="Gửi thông tin" class="white bg-brown padding">
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-block">
+                            <span class="name">Chi nhành Hà Nội</span>
+                            <span class="address">Địa chỉ: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores minus doloremque corrupti aut ab accusantium cum eos quam incidunt, deleniti facere omnis in! Aliquid at rerum autem nesciunt velit impedit!</span>
+                            <span class="phone">Số điện thoại: 0912345678</span>
+                            <span class="phone">Email: sale@jwcafe.com</span>
+                        </div>
+                        <div class="contact-block">
+                            <span class="name">Chi nhành Đà Nẵng</span>
+                            <span class="address">Địa chỉ: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores minus doloremque corrupti aut ab accusantium cum eos quam incidunt, deleniti facere omnis in! Aliquid at rerum autem nesciunt velit impedit!</span>
+                            <span class="phone">Số điện thoại: 0912345678</span>
+                            <span class="phone">Email: sale@jwcafe.com</span>
+                        </div>
+                        <div class="contact-block">
+                            <span class="name">Chi nhành Hồ Chí Minh</span>
+                            <span class="address">Địa chỉ: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores minus doloremque corrupti aut ab accusantium cum eos quam incidunt, deleniti facere omnis in! Aliquid at rerum autem nesciunt velit impedit!</span>
+                            <span class="phone">Số điện thoại: 0912345678</span>
+                            <span class="phone">Email: sale@jwcafe.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="cart-page" class="tabspace">
+                <div class="container">
+                    <div class="c-products">
+                        <div class="product">
+                            <div>
+                                <img src="resources/img/cafe-product.jpg">
+                                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
+                            </div>
+                            <div>
+                                <span class="mg">350.000VNĐ</span>
+                                <input class="mg" type="number">
+                                <a class="mg" hef="#">
+                                    <i class="far fa-trash-alt"></i> Xóa sản phẩm
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="bill">
+                        <span>Họ và tên</span>
+                        <input type="text" placeholder="Họ và tên">
+                        <span>Địa chỉ:</span>
+                        <input type="text" placeholder="Tỉnh/Thành phố">
+                        <input type="text" placeholder="Quận/Huyện">
+                        <input type="text" placeholder="Phường/Xã">
+                        <input type="text" placeholder="Chi tiết">
+                        <span>Số điện thoại</span>
+                        <input type="text" placeholder="Số điện thoại">
+
+                        <span>Tổng tiền: 350.000VNĐ</span>
+                        <button>Hoàn thành</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="resources/img/cafe-countrySide.jpg">
+        <div>
+            <h1>
+                <span>CAFE JW</span>
+                <span>Hotline: 09123123213</span>
+                <span>Email: sale@jwcafe.com</span>
+            </h1>
+        </div>
+    </footer>
 </body>
 
 </html>
