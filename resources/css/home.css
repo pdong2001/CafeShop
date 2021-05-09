@@ -19,10 +19,12 @@ body {
     height: fit-content;
     display: flex;
     flex-direction: column;
+    padding-bottom: 70vw;
 }
 
 header {
     position: relative;
+    padding-bottom: 10px;
 }
 
 .logo img {
@@ -276,7 +278,7 @@ header {
 
 .about .product .introduce p {
     font-size: 135%;
-    margin: 30px 5%;
+    padding: 30px 5%;
     text-align: justify;
 }
 
@@ -407,6 +409,11 @@ footer div {
     height: 80%;
 }
 
+#event-page .event-block span,
+#event-page .event-block img {
+    cursor: pointer;
+}
+
 #event-page .event-block .description {
     font-size: 2vw;
     font-weight: bold;
@@ -506,6 +513,8 @@ footer div {
 
 #cart-page {
     padding: 30px 5%;
+    min-height: 500px;
+    height: 70vh;
 }
 
 #cart-page .container {
@@ -540,6 +549,7 @@ footer div {
 #cart-page .container .c-products {
     padding: 10px;
     border: 1px solid #38160D;
+    width: 100%;
 }
 
 #cart-page .container .product {
@@ -583,4 +593,155 @@ footer div {
 .product .mg {
     padding: 5px;
     margin: 5px 10px;
+}
+
+.nav-btn {
+    display: none;
+    height: 46px;
+    width: 46px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+
+.nav-btn button {
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    background: none;
+}
+
+#menu-left .active span {
+    border-bottom: 1px solid #38160D;
+}
+
+#menu-left {
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+#menu-left .menu {
+    background-color: white;
+}
+
+#cart-page .product.temp {
+    display: none;
+}
+
+#cart-page .dp {
+    display: none;
+}
+
+.add-to-cart {
+    cursor: pointer;
+    user-select: none;
+}
+
+#d-event-page {
+    padding: 20px 10%;
+}
+
+#d-event-page .caption span {
+    font-size: 3vw;
+    font-weight: bold;
+    margin: 20px 15px;
+}
+
+#d-event-page .images {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border-top: 3px double #38160D;
+    min-height: 500px;
+    grid-gap: 30px;
+    padding: 15px;
+}
+
+#d-event-page img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product img,
+.product .info span {
+    cursor: pointer;
+}
+
+#d-product-page .description {
+    padding: 20px 10%;
+}
+
+#d-product-page img {
+    width: 100%;
+}
+
+#d-news-page .title {
+    color: #8D7F3F;
+    font-weight: bold;
+    font-size: 3vw;
+}
+
+#d-news-page {
+    padding: 20px 10%;
+    font-size: 1.5vw;
+}
+
+#d-news-page img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.admin-view {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.admin-option {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    z-index: 1;
+}
+
+.admin-option button {
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: black;
+    font-size: 150%;
+}
+
+@media only screen and (max-width: 1080px) {
+    #main-menu .menu {
+        display: none;
+    }
+    #main-menu {
+        border-bottom: 1px solid #38160D;
+    }
+    #main-menu .nav-btn {
+        display: flex;
+    }
+    .about .product {
+        display: block;
+    }
+    .about .product .img {
+        width: 100%;
+    }
+    .about .intro div {
+        margin: 0 5%;
+    }
+    #product-page .products {
+        grid-template-columns: auto auto;
+    }
+    #d-event-page .images {
+        grid-template-columns: auto auto;
+    }
 }

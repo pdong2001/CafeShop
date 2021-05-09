@@ -35,15 +35,51 @@
                     </li>
                 </uL>
             </div>
+            <div class="admin-view">
+                <button>
+                    <i class="far fa-eye"></i>
+                    ADMIN VIEW
+                </button>
+            </div>
             <div class="logo">
                 <img src="resources/img/Cafe-logo.svg" alt="Logo">
+                <div class="admin-option"><button><i class="fas fa-ellipsis-h"></i></button></div>
             </div>
             <div class="cart" onclick="openTabSpace(event, 'cart-page', 'tabspace')">
                 <span class="goods-count">0</span>
                 <i class="fas fa-shopping-cart"></i>
             </div>
+            <div class="nav-btn">
+                <button>
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
             <div class="menu">
                 <uL class="menu-items">
+                    <li class="menu-item tablink" onclick="openTabSpace(event, 'news-page', 'tabspace')">
+                        <span>TIN TỨC</span>
+                    </li>
+                    <li class="menu-item tablink" onclick="openTabSpace(event, 'shop-page', 'tabspace')">
+                        <span>CỬA HÀNG CAFE</span>
+                    </li>
+                    <li class="menu-item tablink" onclick="openTabSpace(event, 'contact-page', 'tabspace')">
+                        <span>LIÊN HỆ</span>
+                    </li>
+                </uL>
+            </div>
+        </div>
+        <div id="menu-left">
+            <div class="menu">
+                <uL class="menu-items">
+                    <li onclick="openTabSpace(event, 'home-page', 'tabspace')" class="menu-item tablink active">
+                        <span>TRANG CHỦ</span>
+                    </li>
+                    <li id="tab-product" class="menu-item tablink" onclick="openTabSpace(event, 'product-page', 'tabspace')">
+                        <span>SẢN PHẨM</span>
+                    </li>
+                    <li class="menu-item tablink" onclick="openTabSpace(event, 'event-page', 'tabspace')">
+                        <span>SỰ KIỆN</span>
+                    </li>
                     <li class="menu-item tablink" onclick="openTabSpace(event, 'news-page', 'tabspace')">
                         <span>TIN TỨC</span>
                     </li>
@@ -60,6 +96,7 @@
     <main>
         <section>
             <div id="home-page" class="tabspace active">
+                <div class="admin-option"><button><i class="fas fa-ellipsis-h"></i></button></div>
                 <ul class="slides">
                     <input type="radio" name="radio-btn" id="img-1" checked />
                     <li class="slide-container">
@@ -209,12 +246,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -225,12 +262,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -241,12 +278,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -268,12 +305,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -284,12 +321,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -300,12 +337,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -316,12 +353,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -332,12 +369,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -348,12 +385,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -364,12 +401,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -380,12 +417,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -396,12 +433,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -412,12 +449,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -428,12 +465,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="product">
@@ -444,12 +481,12 @@
                             <span>Cà phê Elégant 500g, chua nhẹ, hậu ngọt</span>
                         </div>
                         <div class="price">
-                            <span>120.000VNĐ</span>
+                            <span><span class="dp">120.000</span>VNĐ</span>
                             <span>Khối lượng tịch: 500g</span>
                         </div>
                         <div class="buy">
                             <input type="number">
-                            <a href="function:void(0)">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -463,30 +500,30 @@
                 </div>
                 <div class="container">
                     <div class="event-block">
+                        <img src="resources/img/cafe-event.jpg" onClick="openTabSpace(event,'d-event-page', 'tabspace', '')">
+                        <div class="description">
+                            <span>Hội chợ ra mắt sản phẩm và chi ân khách hàng</span>
+                        </div>
+                    </div>
+                    <div class="event-block" onClick="openTabSpace(event,'d-event-page', 'tabspace', '')">
                         <img src="resources/img/cafe-event.jpg">
                         <div class="description">
                             <span>Hội chợ ra mắt sản phẩm và chi ân khách hàng</span>
                         </div>
                     </div>
-                    <div class="event-block">
+                    <div class="event-block" onClick="openTabSpace(event,'d-event-page', 'tabspace', '')">
                         <img src="resources/img/cafe-event.jpg">
                         <div class="description">
                             <span>Hội chợ ra mắt sản phẩm và chi ân khách hàng</span>
                         </div>
                     </div>
-                    <div class="event-block">
+                    <div class="event-block" onClick="openTabSpace(event,'d-event-page', 'tabspace', '')">
                         <img src="resources/img/cafe-event.jpg">
                         <div class="description">
                             <span>Hội chợ ra mắt sản phẩm và chi ân khách hàng</span>
                         </div>
                     </div>
-                    <div class="event-block">
-                        <img src="resources/img/cafe-event.jpg">
-                        <div class="description">
-                            <span>Hội chợ ra mắt sản phẩm và chi ân khách hàng</span>
-                        </div>
-                    </div>
-                    <div class="event-block">
+                    <div class="event-block" onClick="openTabSpace(event,'d-event-page', 'tabspace', '')">
                         <img src="resources/img/cafe-event.jpg">
                         <div class="description">
                             <span>Hội chợ ra mắt sản phẩm và chi ân khách hàng</span>
@@ -505,7 +542,7 @@
                 <div class="container">
                     <div class="news">
                         <div class="news-block">
-                            <span class="news-title">CÀ PHÊ VÀ LÀM ĐẸP</span>
+                            <span onclick="openTabSpace(event, 'd-news-page', 'tabspace', '')" class="news-title">CÀ PHÊ VÀ LÀM ĐẸP</span>
                             <span class="caption">Cà phê không chỉ là một thức uống được nhiều người ưa thích mà nó còn được xem như một loại nguyên liệu làm đẹp hiệu quả, đặc biệt với da và tóc được rất nhiều người ưa thích. Hãy xem những tác dụng của cà phê giúp làm đẹp cho da và tóc dưới đây nhé!</span>
                             <div>
                                 <img src="resources/img/cafe-news1.jpg">
@@ -572,21 +609,7 @@
         <section>
             <div id="cart-page" class="tabspace">
                 <div class="container">
-                    <div class="c-products">
-                        <div class="product">
-                            <div>
-                                <img src="resources/img/cafe-product.jpg">
-                                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
-                            </div>
-                            <div>
-                                <span class="mg">350.000VNĐ</span>
-                                <input class="mg" type="number">
-                                <a class="mg" hef="#">
-                                    <i class="far fa-trash-alt"></i> Xóa sản phẩm
-                                </a>
-                            </div>
-                        </div>
-
+                    <div class="c-products scroll-hidden">
                     </div>
                     <div class="bill">
                         <span>Họ và tên</span>
@@ -598,12 +621,108 @@
                         <input type="text" placeholder="Chi tiết">
                         <span>Số điện thoại</span>
                         <input type="text" placeholder="Số điện thoại">
-
-                        <span>Tổng tiền: 350.000VNĐ</span>
+                        <span>
+                        <span>Tổng tiền:</span>
+                        <span class="Total-price">0</span>
+                        <span>VNĐ</span>
+                        </span>
                         <button>Hoàn thành</button>
                     </div>
                 </div>
+                <div class="product temp">
+                    <div class="info">
+                        <img src="resources/img/cafe-product.jpg">
+                        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
+                    </div>
+                    <div>
+                        <span class="dp"></span>
+                        <span class="mg"><span class="price"></span>VNĐ<span></span></span>
+                        <input class="mg" type="number">
+                        <a class="mg" hef="#">
+                            <i class="far fa-trash-alt"></i> Xóa sản phẩm
+                        </a>
+                    </div>
+                </div>
             </div>
+            </div>
+        </section>
+        <section>
+            <div id="d-event-page" class="tabspace">
+                <div class="caption">
+                    <span class="title">HỘI CHỢ RA MẮT SẢN PHẨM VÀ CHI ÂN KHÁCH HÀNG</span>
+                    <span>Hình ảnh</span>
+                </div>
+                <div class="images">
+                    <img src="resources/img/cafe-event.jpg">
+                    <img src="resources/img/cafe-event.jpg">
+                    <img src="resources/img/cafe-event.jpg">
+                    <img src="resources/img/cafe-event.jpg">
+                    <img src="resources/img/cafe-event.jpg">
+                    <img src="resources/img/cafe-event.jpg">
+                    <img src="resources/img/cafe-event.jpg">
+                    <img src="resources/img/cafe-event.jpg">
+                    <img src="resources/img/cafe-event.jpg">
+                    <img src="resources/img/cafe-event.jpg">
+                    <img src="resources/img/cafe-event.jpg">
+                    <img src="resources/img/cafe-event.jpg">
+                    <img src="resources/img/cafe-event.jpg">
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="tabspace" id="d-product-page">
+                <img class="main-img" src="resources/img/cafe-product-bg.jpg">
+                <h3 class="title">Cà phê Elégant 500g, chua nhẹ, hậu ngọt</h3>
+                <div class="description">
+                    <p>
+                        Cà phê nguyên chất 100%, được sản xuất theo quy trình chế biến ướt (từ khi thu hoạch đến thành phẩm chi mất 56 gờ đồng hồ)
+                        <br>- KHÔNG PHA TRỘN , TẨM ƯỚP.
+                        <br>- KHÔNG CHẤT BẢO QUẢN.
+                        <br>- HƯƠNG THƠM, CHUA NHẸ VÀ HẬU NGỌT
+                        <br><br>ELEGANT: MỘT KỲ CÔNG CỦA THẾ GIỚI CÀ PHÊ
+                        <br><br>Elegant với 100% từ hạt cafe Arabica, đây là dòng sản phẩm cao cấp của Cafe Langbiang. Arabica được trồng ở độ cao 1.500m trên cao nguyên Langbiang. Dòng Elegant là "kỳ công" từ khâu chọn lọc nguyên liệu tại các đồn điền
+                        trồng theo phương pháp thủ công truyền thông quanh thành phố Đà Lạt.
+                        <br><br><br>Elegant được chọn lựa từ những trái Arabica chin mọng, được chọn lọc kỹ lưỡng từ khâu thu lượm đến sản xuất. Vì thế Elegant sẽ đem đến cho bạn một cảm giác thật nguyên vị của chính nó.
+                        <br><span class="bold">Thành phần</span>
+                        <br>- Arabica trồng ở cao nguyên Langbiang, ở độ cao trung bình 1.500m so với mực nước biển, với khi hậu mát lạnh, có mưa quanh năm đã cho ra một trong những dòng cà phê có hương thơm cao, vị chua nhẹ thanh nhã và được coi một
+                        trong dòng Arabica nogon nhất.
+                        <br><br>- Về mặt dinh dưỡng: trong 100g hạt cà phê Nguyên Chất có : 2,2g nước; 8,6g protein; 11g chất béo; 36,7g đường; 2g cafein; 9g chất xơ; 6g axit tanic; 120mg canxi; 170mg photpho; 42mg sắt; 3mg natri; 12mg vitamin B2; 3,5g
+                        vitamin PP…
+                    </p>
+                    <img src="resources/img/cafe-product-composition.png">
+                    <p>
+                        <span class="bold">Lưu ý</span>
+                        <br>- Để có được công dụng trên bạn nên uống cafe điều độ và chọn dòng cafe sạch, không pha trộn hay chất bảo quản
+                        <br>* Elegant của Cafe Langbiang đã được UBND huyện Lạc Dương, Lâm Đồng, VN cấp chứng nhận nhãn hiệu cafe Arabica Langbiang. Hướng dẫn sử dụng cafe Elegant Langbiang<br><br> - Bước 1: Cho khoảng 20-25g cà phê bột vào phim, ép nhẹ
+                        <br>- Bước 2: Đổ 20-25ml nước đun sôi lên đều bề mặt cà phê và đợi chừng 2 phút - Bước 3: Đổ thêm 60-70ml nước sôi vào phin và đậy nắp lại.<br> - Bước 4: Thưởng thức cà phê<br> * Bạn có thể dùng với đường, sữa, đá tùy thích<br><br>                        * Tuy nhiên Langbiang mách bạn cách uống cafe Langbiang một cách ngon nhất
+                        <br>- Bạn nên thử dùng cà phê pha với mật ong (mật ong rừng thì càng tốt)
+                        <br>- Uống nóng sẽ ngon hơn và tốt cho sức khỏe hơn
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="d-news-page" class="tabspace">
+                <span class="title">CÀ PHÊ VÀ LÀM ĐẸP</span>
+                <p>
+                    Cà phê không chỉ là một thức uống được nhiều người ưa thích mà nó còn được xem như một loại nguyên liệu làm đẹp hiệu quả, đặc biệt với da và tóc được rất nhiều người ưa thích. Hãy xem những tác dụng của cà phê giúp làm đẹp cho da và tóc dưới đây nhé!
+                    Làm sáng da
+                    <br><br> Bạn có thể dùng bã cà phê chà trực tiếp lên da của mình, kết cấu mài mòn của bã cà phê sẽ giúp làm sáng bóng vùng da bị xỉn màu, khiến da trông sáng và khỏe mạnh hơn.
+                    <br><br> Caffeine trong cà phê hoạt động như một Energizer, có tác dụng tốt cho da hay đôi mắt sưng húp của bạn, giúp da săn chắc và trẻ trung hơn. Để có hiệu quả mạnh hơn, thêm chút đường vào bã cà phê, bạn cũng có thể thêm dầu oliu
+                    vào để chà, dầu oliu sẽ giúp tăng độ ẩm cho da.
+                    <br><br>
+                    <img src="resources/img/cafe-news1-d.jpg">
+                    <br><br><br><br> Chống lão hóa
+                    <br> Không chỉ giúp da sáng và săn chắc hơn, các chất caffeine còn có tác dụng cải thiện sự xuất hiện của cellulite (mỡ bị bao bọc bởi độc tố toxin – Nguyên nhân dẫn đến tình trạng lão hóa da). Có rất nhiều sản phẩm đắt tiền làm giảm
+                    cellulite có chứa caffeine, tuy nhiên bạn có thể dễ dàng làm cho mình sản phẩm tương tự tại nhà.
+                    <br> Giúp mọc tóc
+                    <br> Caffeine không chỉ giúp tăng sự lưu thông với da mà còn giúp cho tóc phát triển tốt và khỏe mạnh. Khi xoa bóp trực tiếp caffeine vào da đầu, chúng sẽ kích thích các nang tóc để giúp đẩy mạnh quá trình mọc tóc, làm tóc bạn trông
+                    dày hơn.
+                    <br><br><br><br> Làm đen tóc
+                    <br> Nếu bạn thích có một mái tóc màu đen khỏe mạnh thì cà phê là một lựa chọn rất tốt cho bạn đấy, nó sẽ giúp bạn có một mái tóc đen bóng khỏe mạnh.
+                    <br> Bạn cũng có thể sử dụng bã cà phê cùng một chút tinh dầu yêu thích của bạn hoặc kem ủ để làm đen tóc và giữ ẩm tốt hơn cho mái tóc của bạn. Bạn cũng có thể thêm bột ca cao để làm tăng hiệu quả làm đen tóc nhé.
+                    <br> ----------- Nguồn: Internet
+                </p>
             </div>
         </section>
     </main>
