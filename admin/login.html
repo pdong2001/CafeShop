@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANDOShop | Admin - Login</title>
+
+    <link href="../vendors/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <script src="../vendors/js/jquery-3.6.0.js"></script>
+    <script src="../vendors/js/all.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+        
+        a {
+            color: #666;
+            font-size: 14px;
+            display: block;
+        }
+        
+        .login-title {
+            text-align: center;
+        }
+        
+        #login-page {
+            display: flex;
+        }
+        
+        .login {
+            width: 30%;
+            height: 100vh;
+            background: #FFF;
+            padding: 70px;
+        }
+        
+        .login a {
+            margin-top: 25px;
+            text-align: center;
+        }
+        
+        .form-login {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+        }
+        
+        .form-login label {
+            text-align: left;
+            font-size: 13px;
+            margin-top: 10px;
+            margin-left: 20px;
+            display: block;
+            color: #666;
+        }
+        
+        .input-name,
+        .input-password {
+            width: 100%;
+            background: #DDD;
+            border-radius: 25px;
+            margin: 4px 0 10px 0;
+            padding: 10px;
+            display: flex;
+        }
+        
+        .icon {
+            color: #666;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 4px;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            border: 0;
+            background: none;
+            font-size: 16px;
+            padding: 4px 0;
+            outline: none;
+        }
+        
+        button[type="submit"] {
+            width: 100%;
+            border: 0;
+            border-radius: 25px;
+            padding: 14px;
+            background: #38160D;
+            color: #FFF;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: ease all 0.3s;
+        }
+        
+        button[type="submit"]:hover {
+            opacity: 0.9;
+        }
+        
+        .background {
+            width: 70%;
+            padding: 40px;
+            height: 100vh;
+            background: linear-gradient(60deg, #b44628, #38160D), url('https://cdn.pixabay.com/photo/2016/03/09/09/22/workplace-1245776_960_720.jpg') center no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: flex-end;
+            align-content: center;
+            flex-direction: row;
+        }
+        
+        .background h1 {
+            max-width: 420px;
+            color: #FFF;
+            text-align: right;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .background p {
+            max-width: 650px;
+            color: #1a1a1a;
+            font-size: 15px;
+            text-align: right;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="login-page">
+        <div class="login">
+            <h2 class="login-title">Đăng nhập</h2>
+            <form class="form-login">
+                <label for="name">Tài khoản</label>
+                <div class="input-name">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="text" name="name" placeholder="Nhập tài khoản" required>
+                </div>
+                <label for="password">Mật khẩu</label>
+                <div class="input-password">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" name="password" placeholder="Nhập mật khẩu" required>
+                </div>
+                <button type="submit"><i class="fas fa-door-open"></i> Đăng nhập</button>
+                <a href="dashboard.html" style="display: none;"></a>
+            </form>
+        </div>
+        <div class="background">
+            <h1>JW Cafe, cửa hàng nguyên liệu cà phê thô</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas soluta, sint tempore itaque distinctio dolor ratione natus nemo maiores. Labore dolore qui omnis fuga explicabo repellendus distinctio cumque? Soluta, reprehenderit.</p>
+        </div>
+    </div>
+</body>
+
+</html>

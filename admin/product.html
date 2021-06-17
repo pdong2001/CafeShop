@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Cafe Shop - JW Coffee</title>
+
+    <link href="../vendors/css/all.min.css">
+
+    <script src="../vendors/js/all.min.js"></script>
+    <script src="../vendors/js/jquery-3.6.0.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/admin.css">
+</head>
+
+<body>
+    <section>
+        <div id="product" class="container">
+            <div id="menu">
+                <span class="title">Bảng chọn quản lý</span>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="home.html"><span class="root">Trang chủ</span></a>
+                        </li>
+                        <li>
+                            <a><span class="root active">Sản phẩm</span></a>
+                        </li>
+                        <li>
+                            <a href="order.html"><span class="root">Đơn đặt hàng</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="content" class="scroll-hidden">
+                <div class="products">
+                    <table class="table">
+                        <caption>
+                            <span>Bảng sản phẩm</span>
+                            <div class="filter">
+                                <div>
+                                    <button class="add">
+                                        Thêm
+                                    </button>
+                                </div>
+                                <div>
+                                    <div>
+                                        <select>
+                                        <option>Loại cà phê</option>
+                                        <option>Robusta</option>
+                                        <option>Cherry</option>
+                                        <option>Culi</option>
+                                        <option>Arabica</option>
+                                        <option>Moka</option>
+                                        <option>Catimor</option>
+                                    </select>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="filter" id="showed">
+                                        <label for="showed" name="filter">
+                                        Đã hiển thị
+                                    </label>
+                                    </div>
+                                    <div class="search">
+                                        <input type="text" name="search" placeholder="Mã sản phẩm">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </caption>
+                        <tr>
+                            <th>
+                                Mã SP
+                            </th>
+                            <th>
+                                Tên sản phẩm
+                            </th>
+                            <th>
+                                Loại
+                            </th>
+                            <th>
+                                Giá bán
+                            </th>
+                            <th>
+                                Giảm giá
+                            </th>
+                            <th>
+                                Chức năng
+                            </th>
+                            <th>
+                                Hiển thị
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                SP001
+                            </th>
+                            <th>
+                                CÀ PHÊ ELÉGANT 500G, CHUA NHẸ, HẬU NGỌT
+                            </th>
+                            <th>
+                                Robusta
+                            </th>
+                            <th>
+                                120.000VNĐ
+                            </th>
+                            <th>
+                                30%
+                            </th>
+                            <th class="btn">
+                                <button class="del">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <button class="edit-button">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <input type="checkbox" name="home-product">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                SP001
+                            </th>
+                            <th>
+                                CÀ PHÊ ELÉGANT 500G, CHUA NHẸ, HẬU NGỌT
+                            </th>
+                            <th>
+                                Robusta
+                            </th>
+                            <th>
+                                120.000VNĐ
+                            </th>
+                            <th>
+                                30%
+                            </th>
+                            <th class="btn">
+                                <button class="del">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <button class="edit-button">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <input type="checkbox" name="home-product">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                SP001
+                            </th>
+                            <th>
+                                CÀ PHÊ ELÉGANT 500G, CHUA NHẸ, HẬU NGỌT
+                            </th>
+                            <th>
+                                Robusta
+                            </th>
+                            <th>
+                                120.000VNĐ
+                            </th>
+                            <th>
+                                30%
+                            </th>
+                            <th class="btn">
+                                <button class="del">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <button class="edit-button">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </th>
+                            <th>
+
+                                <input type="checkbox" name="home-product">
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+                <button class="submit ">
+                    <i class="far fa-save "></i>Lưu
+                </button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="product-edit" class="popup center">
+            <div class="panel fill">
+                <button id="product-edit-close-btn" style="position: absolute; right: 5px; top: 5px;">
+                    X
+                </button>
+                <div class="img-input">
+                    <label for="img-input">
+                        <span>Chọn ảnh sản phẩm : </span>
+                    </label>
+                    <input id="img-input" type="file" name="product-img" accept="image/*" multiple>
+                </div>
+                <div>
+                    <div class="input">
+                        <div class="controls">
+                            <div class="input-block">
+                                <div class="max-width">
+                                    <input id="product-name" type="text" name="info" placeholder="Tên sản phẩm">
+                                </div>
+                                <div style="width: 30%;">
+                                    <input id="product-id" type="text" name="info" placeholder="Mã sản phẩm">
+                                </div>
+                            </div>
+                            <div class="input-block">
+                                <div>
+                                    <select>
+                                        <option>Loại cà phê</option>
+                                        <option>Robusta</option>
+                                        <option>Cherry</option>
+                                        <option>Culi</option>
+                                        <option>Arabica</option>
+                                        <option>Moka</option>
+                                        <option>Catimor</option>
+                                    </select>
+                                </div>
+                                <div class="max-width">
+                                    <input id="product-price" type="text" name="info" placeholder="Giá sản phẩm">
+                                </div>
+                                <div style="width: 40%;">
+                                    <input id="product-discount" type="text" name="info" placeholder="Giá sản phẩm">
+                                </div>
+                            </div>
+                            <textarea id="description" name="info" placeholder="Mô tả sản phẩm" rows='20'></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $('#product-edit-close-btn').click(function() {
+            $('#product-edit').hide();
+        });
+        $('.add, .edit-button').click(function() {
+            $('#product-edit').show();
+        });
+        $('button.del').click(function() {
+            $(this).parent().parent().remove();
+        })
+    </script>
+</body>
+
+</html>

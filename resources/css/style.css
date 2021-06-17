@@ -1,3 +1,12 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    position: relative;
+}
+
 .clearfix:after {
     content: "";
     clear: both;
@@ -222,4 +231,38 @@
 .scroll-hidden:hover::-webkit-scrollbar-thumb {
     background: rgb(202, 202, 202);
     border-radius: 10px;
+}
+
+.popup {
+    position: fixed;
+    z-index: 10;
+    display: none;
+    top: 0px;
+    left: 0px;
+}
+
+.popup .panel.fill {
+    border: 1px solid;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.cover-layer {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+}
+
+.bar {
+    display: flex;
+    width: 100%;
+}
+
+.unselectable {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
