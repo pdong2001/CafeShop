@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/resources/css/style.css" rel="stylesheet">
+    <link href="/resources/css/home.css" rel="stylesheet">
+
+    <link href="/vendors/css/all.min.css">
+
+    <script src="/vendors/js/all.min.js"></script>
+    <script src="/vendors/js/jquery-3.6.0.js"></script>
+    <script src="/resources/js/functions.js"></script>
+
+    <link rel="icon" type="png" href="/resources/img/cafe-webIcon.png">
+    <title>Cafe shop</title>
+</head>
+
+<body class="scroll-hidden">
+    <header>
+        <div id="main-menu">
+            <div class="menu">
+                <uL class="menu-items">
+                    <li class="menu-item tablink">
+                        <a href="/pages/home.html">TRANG CHỦ</a>
+                    </li>
+                    <li id="tab-product" class="menu-item tablink">
+                        <a href="product.html">SẢN PHẨM</a>
+                    </li>
+                    <li class="menu-item tablink">
+                        <a href="library.html">SỰ KIỆN</a>
+                    </li>
+                </uL>
+            </div>
+            <div class="logo">
+                <img src="/resources/img/Cafe-logo.svg" alt="Logo">
+            </div>
+            <div class="cart">
+                <a href="/pages/cart.html">
+                    <span class="goods-count">0</span>
+                    <i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="nav-btn">
+                <button>
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="menu">
+                <uL class="menu-items">
+                    <li class="menu-item tablink">
+                        <a href="news.html">TIN TỨC</a>
+                    </li>
+                    <li class="menu-item tablink">
+                        <a href="stores.html">CỬA HÀNG CAFE</a>
+                    </li>
+                    <li class="menu-item tablink active">
+                        <a href="contact.html">LIÊN HỆ</a>
+                    </li>
+                </uL>
+            </div>
+        </div>
+        <div id="menu-left">
+            <div class="menu">
+                <uL class="menu-items">
+                    <li class="menu-item tablink">
+                        <a href="home.html">TRANG CHỦ</a>
+                    </li>
+                    <li id="tab-product" class="menu-item tablink">
+                        <a href="product.html">SẢN PHẨM</a>
+                    </li>
+                    <li class="menu-item tablink">
+                        <a href="library.html">SỰ KIỆN</a>
+                    </li>
+                    <li class="menu-item tablink">
+                        <a href="news.html">TIN TỨC</a>
+                    </li>
+                    <li class="menu-item tablink">
+                        <a href="stores.html active">CỬA HÀNG CAFE</a>
+                    </li>
+                    <li class="menu-item tablink">
+                        <a href="contact.html">LIÊN HỆ</a>
+                    </li>
+                </uL>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div id="cart-page" class="">
+                <div class="container">
+                    <div class="c-products scroll-hidden">
+                    </div>
+                    <div class="bill">
+                        <span>Họ và tên</span>
+                        <input type="text" placeholder="Họ và tên">
+                        <span>Địa chỉ:</span>
+                        <input type="text" placeholder="Tỉnh/Thành phố">
+                        <input type="text" placeholder="Quận/Huyện">
+                        <input type="text" placeholder="Phường/Xã">
+                        <input type="text" placeholder="Chi tiết">
+                        <span>Số điện thoại</span>
+                        <input type="text" placeholder="Số điện thoại">
+                        <span>
+                        <span>Tổng tiền:</span>
+                        <span class="Total-price">0</span>
+                        <span>VNĐ</span>
+                        </span>
+                        <button>Hoàn thành</button>
+                    </div>
+                </div>
+                <div class="product temp">
+                    <div class="info">
+                        <div>
+                            <a href=""><img src="/resources/img/cafe-product.jpg"></a>
+                        </div>
+                        <div>
+                            <a href="">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</a>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="dp"></span>
+                        <span class="mg"><span class="price"></span>VNĐ<span></span></span>
+                        <input class="mg" type="number">
+                        <a class="mg del" hef="#">
+                            <i class="far fa-trash-alt"></i> Xóa sản phẩm
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="/resources/img/cafe-countrySide.jpg">
+        <div>
+            <h1>
+                <span>CAFE JW</span>
+                <span>Hotline: 09123123213</span>
+                <span>Email: sale@jwcafe.com</span>
+            </h1>
+        </div>
+    </footer>
+</body>
+
+</html>

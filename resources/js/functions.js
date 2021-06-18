@@ -9,6 +9,37 @@ function openTabSpace(evt, id, className, linkName = 'tablink') {
     }
 }
 
+function ReplaceInStorages(index, item) {
+    var list = getListCartItem();
+    list.splice(index, 1, item);
+    localStorage.removeItem('jwcafecart');
+    localStorage.setItem('jwcafecart', JSON.stringify(list));
+}
+
+function addToCart(container, item) {
+    item.appendTo(container);
+}
+
+function addToStorages(item) {
+    var list = getListCartItem();
+    list.push(item.toDictionary());
+    localStorage.removeItem('jwcafecart');
+    localStorage.setItem('jwcafecart', JSON.stringify(list));
+}
+
+function removeToStorages(index) {
+    var list = getListCartItem();
+    list.splice(index, 1);
+    localStorage.removeItem('jwcafecart');
+    localStorage.setItem('jwcafecart', JSON.stringify(list));
+}
+
+function getListCartItem() {
+    var list = JSON.parse(localStorage.getItem('jwcafecart'));
+    var listCartItem = list == null ? [] : list;
+    return listCartItem;
+}
+
 function getParent(el, index) {
     var parent = el;
     for (var i = 0; i < index; i++) {
@@ -25,23 +56,37 @@ function moneyFormat(val) {
     return strVal;
 }
 
-
 function updateCart() {
+    var listCartItem = getListCartItem();
     var Total = 0;
-    document.querySelectorAll('.c-products .price').forEach(elem => {
-        Total += Number(elem.innerHTML.replaceAll('.', ''));
-    });
+    var container = $('#cart-page .c-products');
+    container.empty();
+    for (var i = 0; i < listCartItem.length; i++) {
+        var item = new CartItem(listCartItem[i].img, listCartItem[i].dp,
+            listCartItem[i].info, listCartItem[i].amount, listCartItem[i].link);
+        Total += Number(item.price);
+        addToCart(container, item.toElement());
+    }
     var rs = moneyFormat(Total);
     $('.bill .Total-price').text(rs);
+    $('.cart span').text(listCartItem.length);
+
 }
+
 $(document).ready(function() {
     $('input[type=number]').val('1');
     $('input[type=number]').change(function() {
         if (Number($(this).val()) < 1) {
-            $(this).val('1');
+            $(this).val(1);
         }
-        var price = Number($(this).parent().parent().find('.dp').text().replaceAll('.', '')) * $(this).val();
-        $(this).parent().parent().find('span.price').text(moneyFormat(price));
+    });
+    $('#cart-page input[type=number]').change(function() {
+        var product = $(this).parent().parent();
+        var list = getListCartItem();
+        var index = product.parent().children().index(product);
+        list[index].amount = $(this).val();
+        localStorage.removeItem('jwcafecart');
+        localStorage.setItem('jwcafecart', JSON.stringify(list));
         updateCart();
     });
     $('.show-more').click(function() {
@@ -76,22 +121,13 @@ $(document).ready(function() {
         $('#menu-left').slideToggle();
     });
     $('.add-to-cart').click(function() {
-        var newProduct = $('.product.temp').clone(true);
-        newProduct.removeClass('temp');
+
         var productAdd = $(this).parent().parent();
-        newProduct.find('img').attr('src', productAdd.find('img').attr('src'));
-        newProduct.find('.dp').text(productAdd.find('.dp').text());
-        newProduct.find('.price').text(moneyFormat(Number(productAdd.find('span.dp').text().replaceAll('.', '')) * productAdd.find('input').val()));
-        newProduct.find('.info span').text(productAdd.find('.info span').text());
-        newProduct.find('input').val(productAdd.find('input').val());
-        newProduct.find('a').click(function() {
-            $(this).parent().parent().remove();
-            $('.cart span').text(Number($('.cart span').text()) - 1);
-            updateCart();
-        });
-        newProduct.appendTo($('#cart-page .c-products'));
+        var item = new CartItem(productAdd.find('img').attr('src'), productAdd.find('.dp').text(),
+            productAdd.find('.info a').text(), productAdd.find('input').val(), ''
+        )
+        addToStorages(item);
         updateCart();
-        $('.cart span').text(Number($('.cart span').text()) + 1);
     });
     $('.bill button').click(function() {
         var value = $('.bill input').filter(function() {
@@ -105,11 +141,45 @@ $(document).ready(function() {
             alert("Đặt hàng thành công.");
         }
     });
-
-    $('.product img, .product .info span').click(function() {
-        $('.tabspace').removeClass('active');
-        $('body,html').scrollTop(60);
-        $('body').css('padding-bottom', $('footer').height());
-        $('#d-product-page').addClass('active');
-    });
+    updateCart();
+    setInterval(function() {
+        var list = getListCartItem();
+        if (Number($('.cart .goods-count').html()) != list.length) {
+            updateCart();
+        }
+    }, 500);
 });
+
+function CartItem(img, dp, info, amount, link) {
+    this.img = img;
+    this.info = info;
+    this.amount = amount;
+    this.link = link;
+    this.dp = dp;
+    this.price = Number(dp.replaceAll('.', '')) * this.amount;
+    this.toElement = function() {
+        var newProduct = $('.product.temp').clone(true);
+        newProduct.removeClass('temp');
+        newProduct.find('img').attr('src', this.img);
+        newProduct.find('.dp').text(this.dp);
+        newProduct.find('input[type=number]').val('' + this.amount);
+        newProduct.find('.info div:last-child a').text(this.info);
+        newProduct.find('.price').text(moneyFormat(this.price));
+        newProduct.find('a.del').click(function() {
+            var parent = $(this).parent().parent();
+            removeToStorages(parent.parent().children().index(parent));
+            updateCart();
+        });
+        return newProduct;
+    };
+    this.toDictionary = function() {
+        var dict = {
+            img: this.img,
+            info: this.info,
+            amount: this.amount,
+            link: this.link,
+            dp: this.dp,
+        }
+        return dict;
+    }
+}
